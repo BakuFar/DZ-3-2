@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBAction func sexSelector(_ sender: Any) {
+    }    
+    @IBAction func saveButton(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        profileImage.layer.cornerRadius = 50
     }
-
-
 }
 
