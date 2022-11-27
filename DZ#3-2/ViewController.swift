@@ -13,9 +13,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
-    @IBAction func sexSelector(_ sender: Any) {
-    }    
+    @IBOutlet weak var sexSegment: UISegmentedControl!
     @IBAction func saveButton(_ sender: Any) {
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
+        secondVC.userNameText = "User Name: " +  (userNameTextField.text ?? "")
+        secondVC.emailIDText = "Email ID: " + (emailTextField.text ?? "")
+        secondVC.phoneNumberText = "Phone Number: " + (phoneTextField.text ?? "")
+        secondVC.dateOfBirthText = "Date of Birth: " + (dateOfBirthTextField.text ?? "")
+        if sexSegment.selectedSegmentIndex == 0 {
+            secondVC.sexText = "Sex: Male"
+        }else {
+            secondVC.sexText = "Sex: Female"
+        }
+        navigationController?.pushViewController(secondVC, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
